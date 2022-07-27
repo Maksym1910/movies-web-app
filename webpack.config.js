@@ -8,13 +8,12 @@ const getResolve = require('./webpack.resolve');
 module.exports = (env) => ({
   mode: env.production ? 'production' : 'development',
   entry: {
-    app: path.resolve('src', 'index.jsx'),
+    app: path.resolve('src', 'index.tsx'),
   },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: env.production ? 'js/[chunkhash:6].[name].js' : 'js/[name].js',
     chunkFilename: env.production ? 'js/[chunkhash:6].[name].js' : 'js/[name].js',
-    publicPath: '/',
   },
   module: getModule(),
   // devServer: getDevServer(),

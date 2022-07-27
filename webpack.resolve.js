@@ -1,6 +1,9 @@
 const path = require('path');
 
 module.exports = () => ({
-  modules: ['src', 'node_modules'],
-  extensions: ['.jsx', '.js'],
+  modules: [
+    path.join(__dirname, 'src'),
+    'node_modules',
+  ],
+  extensions: ['.tsx', '.jsx', '.ts', '.js'],
 });
