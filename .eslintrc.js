@@ -47,5 +47,7 @@ module.exports = {
     ],
     'no-restricted-exports': 'off',
     'react/destructuring-assignment': 'off',
+    'import/prefer-default-export': 'off',
+    'no-param-reassign': ['error', { props: false }],
   },
 };
