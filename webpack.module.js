@@ -22,11 +22,11 @@ module.exports = () => ({
         'sass-loader',
       ],
     },
-    // {
-    //   test: /\.(jpg|jpeg)$/,
-    //   use: {
-    //     loader: 'file-loader',
-    //   },
-    // },
+    {
+      test: /\.(jpg|jpeg)$/,
+      use: {
+        loader: 'file-loader',
+      },
+    },
   ],
 });
