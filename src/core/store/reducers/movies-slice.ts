@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IMovie } from 'models/IMovie';
+
+import { IMovie } from 'models/movies';
 import { fetchMovies } from '../actions/fetch-movies';
 
 interface MovieState {
