@@ -1,0 +1,9 @@
+.root {
+  cursor: pointer;
+  font-weight: 400;
+  color: var(--color-pink);
+
+  @media (max-width: 425px) {
+    font-size: 1.5em;
+  }
+}

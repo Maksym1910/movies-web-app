@@ -1,0 +1,24 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px 60px;
+  background-image: url("/static/header.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  overflow: hidden;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 760px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+}
