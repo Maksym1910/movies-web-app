@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { moviesApi } from 'services/movies-service';
 
 const App = () => {
-  const { data: moviesData, isLoading, error } = moviesApi.useFetchMoviesQuery(5);
+  const [searchQuery, setSearchQuery] = useState('');
+  const { data: moviesData, isLoading, error } = moviesApi.useFetchMoviesQuery(searchQuery);
 
   console.log(moviesData, isLoading, error);
 
   return (
-    <h1>Hello</h1>
+    <input type="text" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} />
   );
 };
 
