@@ -1,0 +1,4 @@
+{
+  "pattern": "^(feature|bug|tech)\/([0-9]+)-([a-z0-9-]+)$",
+  "errorMsg": "Invalid branch name"
+}
