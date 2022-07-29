@@ -1,18 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { moviesApi } from 'services/movies-service';
+import Header from 'components/header';
 
-const App = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const {
-    data: moviesData,
-  } = moviesApi.useFetchMoviesQuery({ search: searchQuery, searchBy: 'title' });
-
-  console.log(moviesData?.data);
-
-  return (
-    <input type="text" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} />
-  );
-};
+const App = () => (
+  <Header />
+);
 
 export default App;

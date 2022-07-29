@@ -49,5 +49,6 @@ module.exports = {
     'react/destructuring-assignment': 'off',
     'import/prefer-default-export': 'off',
     'no-param-reassign': ['error', { props: false }],
+    'react/jsx-closing-bracket-location': [1, { selfClosing: 'after-props', nonEmpty: 'after-props' }],
   },
 };
