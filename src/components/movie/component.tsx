@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
-import { IMovie } from 'models/movies';
-
 import { Link } from 'react-router-dom';
+
+import { IMovie } from 'models/movies';
+import { useDefaultPoster } from 'hooks/use-default-poster';
+
 import styles from './component.module.scss';
-import { useDefaultPoster } from '../../hooks/use-default-poster';
 
 interface Props {
   movie: IMovie,
