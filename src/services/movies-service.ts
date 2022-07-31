@@ -1,6 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
 import env from 'core/env';
-import { IMoviesQueryOptions, IMoviesResponse } from 'models/movies';
+import {
+  IMovie,
+  IMovieByIdQueryOptions,
+  IMoviesQueryOptions,
+  IMoviesResponse,
+} from 'models/movies';
 
 export const moviesApi = createApi({
   reducerPath: 'moviesApi',
@@ -16,6 +21,11 @@ export const moviesApi = createApi({
           search: queryParams.search,
           limit: queryParams.limit,
         },
+      }),
+    }),
+    fetchMovieById: build.query<IMovie, IMovieByIdQueryOptions>({
+      query: (queryParams) => ({
+        url: `/movies/${queryParams.id}`,
       }),
     }),
   }),

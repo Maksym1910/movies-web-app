@@ -1,5 +1,8 @@
-import React, { FC, SyntheticEvent } from 'react';
+import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
+
 import { IMovie } from 'models/movies';
+import { useDefaultPoster } from 'hooks/use-default-poster';
 
 import styles from './component.module.scss';
 
@@ -10,26 +13,26 @@ interface Props {
 const Movie: FC<Props> = (props) => {
   const releaseYear = new Date(props.movie.release_date).getFullYear();
   const genres = props.movie.genres.join(', ');
-  const defaultPoster = 'https://www.thecivic.com.au/template_1/img/default-movie-portrait.jpg';
+  const defaultPosterHandler = useDefaultPoster();
 
-  const handleImagePosterError = (event: SyntheticEvent) => {
-    const target = event.target as HTMLImageElement;
-    target.src = defaultPoster;
-    target.onerror = null;
+  const handleOnMovieClick = () => {
+    document.body.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   return (
     <li className={styles.item}>
-      <a
-        href="https://www.google.com.ua/"
-        className={styles.poster}
-        target="_blank"
-        rel="noreferrer">
+      <Link
+        to={`/movie/${props.movie.id}`}
+        onClick={handleOnMovieClick}
+        className={styles.poster}>
         <img
           src={props.movie.poster_path}
           alt={props.movie.title}
-          onError={handleImagePosterError} />
-      </a>
+          onError={defaultPosterHandler} />
+      </Link>
       <div className={styles.description}>
         <div>
           <h3 className={styles.title}>{props.movie.title}</h3>

@@ -1,17 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 
-import Logo from 'components/logo';
-import Search from 'features/search';
-import AddMovie from 'features/add-movie';
-import styles from './component.module.scss';
+interface Props {
+  children: ReactNode
+  className: string,
+}
 
-const Header: FC = () => (
-  <header className={styles.root}>
-    <div className={styles.container}>
-      <Logo />
-      <AddMovie />
-    </div>
-    <Search />
+const Header: FC<Props> = (props) => (
+  <header className={props.className}>
+    {props.children}
   </header>
 );
 

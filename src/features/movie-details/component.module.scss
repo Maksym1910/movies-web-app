@@ -1,0 +1,122 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 2em 7em;
+  background-image: url("/static/header.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  overflow: hidden;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    .search {
+      cursor: pointer;
+    }
+
+    @media (max-width: 760px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  .detailsContainer {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    margin: auto 0;
+    gap: 120px;
+    padding: 60px 0;
+
+    @media (max-width: 1440px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+
+      .titleContainer {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 10px;
+
+        .title {
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-weight: 300;
+          font-size: 40px;
+        }
+
+        .vote {
+          padding: 15px;
+          font-weight: 300;
+          font-size: 20px;
+          border: 1px solid var(--color-white);
+          border-radius: 50%;
+        }
+      }
+
+      .tagline {
+        margin-bottom: 20px;
+        font-weight: 500;
+        font-size: 18px;
+      }
+
+      .genres {
+        margin-bottom: 30px;
+        font-weight: 500;
+        font-size: 18px;
+        opacity: 0.5;
+      }
+
+      .metaInfo {
+        display: flex;
+        gap: 50px;
+        margin-bottom: 30px;
+
+        .year,
+        .runtime {
+          font-weight: 300;
+          font-size: 24px;
+          color: var(--color-pink);
+        }
+      }
+
+      .meta {
+        margin-bottom: 10px;
+        font-weight: 300;
+        font-size: 20px;
+        letter-spacing: 1px;
+
+        .budget {
+          margin-right: 15px;
+        }
+
+        &:last-of-type {
+          margin-bottom: 30px;
+        }
+      }
+
+      .overview {
+        font-weight: 300;
+        font-size: 20px;
+        opacity: 0.5;
+      }
+    }
+  }
+}

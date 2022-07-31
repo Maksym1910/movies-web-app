@@ -1,13 +1,9 @@
 import React from 'react';
 
-import Header from 'components/header';
-import MoviesList from 'components/movies-list';
+import AppRouter from '../app-router';
 
 const App = () => (
-  <>
-    <Header />
-    <MoviesList />
-  </>
+  <AppRouter />
 );
 
 export default App;

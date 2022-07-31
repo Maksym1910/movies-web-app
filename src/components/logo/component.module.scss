@@ -1,7 +1,11 @@
 .root {
   cursor: pointer;
-  font-weight: 400;
   color: var(--color-pink);
+  text-decoration: none;
+
+  .title {
+    font-weight: 400;
+  }
 
   @media (max-width: 425px) {
     font-size: 1.5em;
