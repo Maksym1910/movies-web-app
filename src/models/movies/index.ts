@@ -13,6 +13,21 @@ export interface IMovie {
   genres: Array<string>,
 }
 
+export interface IMovieFormatted {
+  id: number,
+  title: string,
+  tagline: string,
+  vote_average: number,
+  vote_count: number,
+  releaseYear: number,
+  poster_path: string,
+  overview: string,
+  budget: string,
+  revenue: string,
+  runtime: string,
+  genres: string,
+}
+
 export interface IMoviesResponse {
   data: Array<IMovie>,
   limit: number,
@@ -28,4 +43,8 @@ export interface IMoviesQueryOptions {
   filter?: string[],
   offset?: number,
   limit?: number,
+}
+
+export interface IMovieByIdQueryOptions {
+  id: string,
 }
